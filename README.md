@@ -1,7 +1,7 @@
 # The Covering-Assignment Problem for Swarm-powered Ad-hoc Clouds (CAPsac): A Distributed 3D Mapping Use-case
 Repository containing datasets of the **Covering-Assignment Problem for Swarm-powered Ad-hoc Clouds (CAPsac)** in the context of a swarm-powered 3D mapping mission.
 
-The paper "*The Covering-Assignment Problem for Swarm-powered Ad-hoc Clouds (CAPsac): A Distributed 3D Mapping Use-case*" (available online soon), addresses the problem of optimizing the exploitation of a swarm-powered ad-hoc cloud, by jointly dealing with two interrelated aspects of the data-processing stage:
+The paper "*The Covering-Assignment Problem for Swarm-powered Ad-hoc Clouds (CAPsac): A Distributed 3D Mapping Use-case*" (preprint available in http://arxiv.org/abs/2004.11837), addresses the problem of optimizing the exploitation of a swarm-powered ad-hoc cloud, by jointly dealing with two interrelated aspects of the data-processing stage:
   - **The workload generation**, i.e., definition of the computing application elements and of the corresponding set of data input.
   - **The workload scheduling/assignment**, i.e., mapping of computing application elements and physical swarm members.
 
