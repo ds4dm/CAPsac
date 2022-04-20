@@ -1,7 +1,21 @@
-# The Covering-Assignment Problem for Swarm-powered Ad-hoc Clouds (CAPsac): A Distributed 3D Mapping Use-case
-Repository containing datasets of the **Covering-Assignment Problem for Swarm-powered Ad-hoc Clouds (CAPsac)** in the context of a swarm-powered 3D mapping mission.
+This repository contains:
 
-The paper "*The Covering-Assignment Problem for Swarm-powered Ad-hoc Clouds (CAPsac): A Distributed 3D Mapping Use-case*" (preprint available in http://arxiv.org/abs/2004.11837), addresses the problem of optimizing the exploitation of a swarm-powered ad-hoc cloud, by jointly dealing with two interrelated aspects of the data-processing stage:
+-  **Instances** of the **Covering-Assignment Problem for Swarm-powered Ad-hoc Clouds (CAPsac)** in the context of a swarm-powered 3D mapping mission. 
+
+- **Extended $\hat{T}$ analysis** for VNS-based and mathematical programming-based **heuristics** solving the CAPsac (preprint availble at [arXiv](https://arxiv.org/abs/2103.06953)) when varying the **maximum transmission time allowed**.
+
+
+# Table of Contents  
+- [CAPsac](#the-covering-assignment-problem-for-swarm-powered-ad-hoc-clouds--capsac---a-distributed-3d-mapping-use-case)
+
+- [Instance Structure](#notation-and-instances-file-columns)
+
+- [Extended Senstitivity Analysis (Heuristics)](#extended-senstitivity-analysis)
+
+
+# The Covering-Assignment Problem for Swarm-powered Ad-hoc Clouds (CAPsac): A Distributed 3D Mapping Use-case
+
+The paper "*The Covering-Assignment Problem for Swarm-powered Ad-hoc Clouds (CAPsac): A Distributed 3D Mapping Use-case*" --- published at the [IEEE Internet of Things Journal](https://doi.org/10.1109/JIOT.2020.3039261) with preprint available at [arXiv](http://arxiv.org/abs/2004.11837) --- addresses the problem of optimizing the exploitation of a swarm-powered ad-hoc cloud, by jointly dealing with two interrelated aspects of the data-processing stage:
   - **The workload generation**, i.e., definition of the computing application elements and of the corresponding set of data input.
   - **The workload scheduling/assignment**, i.e., mapping of computing application elements and physical swarm members.
 
@@ -11,7 +25,9 @@ Briefly, the objective is the minimization of the overall computing times (3D pr
 
 For the purpose of illustrating the applicability of our approach to a real-life application, we adjust the proposed solution to a relevant use-case scenario from the emergency response field: swarm-powered distributed 3D reconstruction for humanitarian emergency response application. Such use-case is a perfect example of real-life application subject to geolocation constraints and that highly benefits from swarm-powered ad-hoc cloud infrastructure.
   
-#### Notation and instances file columns:
+# Notation and instances file columns:
+
+The instances are located in the folder named [**"instances/" folder**](https://github.com/ds4dm/CAPsac/instances/).
  
 The names of the instances follow the notation ***"X-ImYYDnZZPWW"***:
   - **X**: *"u"* for the unweighted instances; *"w"* for the weighted instances;
@@ -42,9 +58,9 @@ Concerning the columns in the instances files, they are listed as follows.
     - **gps location-alt**: altitude of a drone
     - **gps location-lat**: latitude of a drone
     - **gps location-lng**: longitude of a drone
-    - **gps location in 2D-alt**: altitude of a drone when the gps location is projected on a eucledian plane
-    - **gps location in 2D-lat**: latitude of a drone when the gps location is projected on a eucledian plane
-    - **gps location in 2D-lng**: longitude of a drone when the gps location is projected on a eucledian plane
+    - **gps location in 2D-alt**: altitude of a drone when the gps location is projected on the euclidean plane
+    - **gps location in 2D-lat**: latitude of a drone when the gps location is projected on the euclidean plane
+    - **gps location in 2D-lng**: longitude of a drone when the gps location is projected on the euclidean plane
   
   - **Image file**: 
     - **id**: unique Id of a photo
@@ -54,12 +70,34 @@ Concerning the columns in the instances files, they are listed as follows.
     - **gps location-alt**: altitude of a photo
     - **gps location-lat**: latitude of a photo
     - **gps location-lng**: longitude of a photo
-    - **gps location in 2D-alt**: altitude of a photo when the gps location is projected on a eucledian plane;
-    - **gps location in 2D-lat**: latitude of a photo when the gps location is projected on a eucledian plane;
-    - **gps location in 2D-lng**: longitude of a photo when the gps location is projected on a eucledian plane;
+    - **gps location in 2D-alt**: altitude of a photo when the gps location is projected on the euclidean plane;
+    - **gps location in 2D-lat**: latitude of a photo when the gps location is projected on the euclidean plane;
+    - **gps location in 2D-lng**: longitude of a photo when the gps location is projected on the euclidean plane;
   
   - **Network topology file**: 
     - **id arc ab**: unique ID of an arc
     - **node a**: ID of the source node(drone) *a* in the arc
     - **node b**: ID of the destination node(drone) *b* in the arc
     - **bandwidth**: bandwidth capacity of the arc in megabytes per seconds
+
+
+# Extended Senstitivity Analysis
+
+For further details concerning the heuristics, see the preprint https://arxiv.org/abs/2103.06953 --- "**Heuristics for optimizing 3D mapping missions over swarm-powered ad hoc clouds**".
+
+Figures inside the [folder **"heuristics_analysis/"**](https://github.com/ds4dm/CAPsac/instances/) present the results obtained by the decomposition-based and the VNS heuristics for $\hat{T} \in \{24s, 25s, 26s,\ldots,149s,150s\}$ for certain instances:
+
+- $u-P200D5\%\bar{D}70$;
+- $u-P200D5\%\bar{D}90$;
+- $u-P400D7\%\bar{D}50$;
+- $u-P400D7\%\bar{D}70$;
+- $w-P200D5\%\bar{D}70$;
+- $w-P200D5\%\bar{D}90$;
+- $w-P400D7\%\bar{D}50$;
+- $w-P400D7\%\bar{D}70$.
+
+The figures show how decreasing $\hat{T}$ values affect the ability of the proposed methods to achieve optimal or near-optimal solutions.
+We used distinct shaded regions in the figure to represent the different optimal $T_{max}^*$ values obtained within the interval of tested $\hat{T}$ values. 
+
+The vertical axis “Dev.($\%$)” in the figures reports the percentage deviation w.r.t. the optimum $T_{\max}^*$ in the shaded region associated with each value of $\hat{T}$ tested.
+Green lines and “$\bullet$” symbols represent the deviations obtained by the decomposition-based method (named “Decomp.”) whereas the average deviation achieved by 20 runs of the VNS method (denoted by ``VNS'') are represented by the orange lines and empty “$\circ$”.
