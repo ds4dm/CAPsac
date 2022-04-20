@@ -6,14 +6,14 @@ This repository contains:
 
 
 # Table of Contents  
-- [CAPsac](#the-covering-assignment-problem-for-swarm-powered-ad-hoc-clouds--capsac---a-distributed-3d-mapping-use-case)
+- [CAPsac](#capsac)
 
 - [Instance Structure](#notation-and-instances-file-columns)
 
 - [Extended Senstitivity Analysis (Heuristics)](#extended-senstitivity-analysis)
 
 
-# The Covering-Assignment Problem for Swarm-powered Ad-hoc Clouds (CAPsac): A Distributed 3D Mapping Use-case
+# CAPsac
 
 The paper "*The Covering-Assignment Problem for Swarm-powered Ad-hoc Clouds (CAPsac): A Distributed 3D Mapping Use-case*" --- published at the [IEEE Internet of Things Journal](https://doi.org/10.1109/JIOT.2020.3039261) with preprint available at [arXiv](http://arxiv.org/abs/2004.11837) --- addresses the problem of optimizing the exploitation of a swarm-powered ad-hoc cloud, by jointly dealing with two interrelated aspects of the data-processing stage:
   - **The workload generation**, i.e., definition of the computing application elements and of the corresponding set of data input.
@@ -27,7 +27,7 @@ For the purpose of illustrating the applicability of our approach to a real-life
   
 # Notation and instances file columns:
 
-The instances are located in the folder named [**"instances/" folder**](https://github.com/ds4dm/CAPsac/instances/).
+The instances are located in the folder named [**"instances/" folder**](https://github.com/ds4dm/CAPsac/tree/master/instances).
  
 The names of the instances follow the notation ***"X-ImYYDnZZPWW"***:
   - **X**: *"u"* for the unweighted instances; *"w"* for the weighted instances;
@@ -85,7 +85,7 @@ Concerning the columns in the instances files, they are listed as follows.
 
 For further details concerning the heuristics, see the preprint https://arxiv.org/abs/2103.06953 --- "**Heuristics for optimizing 3D mapping missions over swarm-powered ad hoc clouds**".
 
-Figures inside the [folder **"heuristics_analysis/"**](https://github.com/ds4dm/CAPsac/instances/) present the results obtained by the decomposition-based and the VNS heuristics for $\hat{T} \in \{24s, 25s, 26s,\ldots,149s,150s\}$ for certain instances:
+Figures inside the [folder **"heuristics_analysis/"**](https://github.com/ds4dm/CAPsac/tree/master/heuristics_analysis) present the results obtained by the decomposition-based and the VNS heuristics for $\hat{T} \in \{24s, 25s, 26s,\ldots,149s,150s\}$ for certain instances:
 
 - $u-P200D5\%\bar{D}70$;
 - $u-P200D5\%\bar{D}90$;
